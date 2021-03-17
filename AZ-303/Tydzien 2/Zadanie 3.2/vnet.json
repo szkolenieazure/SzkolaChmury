@@ -45,7 +45,14 @@
           ],
           "virtualNetworkPeerings": [],
           "enableDdosProtection": false
+
       }
     }
-  ]
+  ],
+   "outputs": {
+        "resourceID": {
+            "type": "string",
+            "value": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_Contoso_VNET_name'))]"
+}
+   }
 }
