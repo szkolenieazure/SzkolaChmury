@@ -56,7 +56,7 @@
    "outputs": {
         "resourceID": {
             "type": "string",
-            "value": "[resourceId('Microsoft.Network/virtualNetworks', parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'))]"
+            "value": "parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name')]"
 }
    }
 }
