@@ -11,10 +11,6 @@
             "type": "String"
         
         },
-        "networkInterfaces_contoso_www_vm01720_externalid": {
-            "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Network/networkInterfaces/contoso-www-vm01720",
-            "type": "String"
-        },
           "networkInterfaces_contoso_www_vm01522_name": {
             "defaultValue": "contoso-www-vm01522",
             "type": "String"
