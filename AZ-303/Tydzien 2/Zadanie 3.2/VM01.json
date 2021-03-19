@@ -6,78 +6,22 @@
             "defaultValue": "Contoso-WWW-VM01",
             "type": "String"
         },
-        "networkInterfaces_contoso_www_vm01703_name": {
-            "defaultValue": "contoso-www-vm01703",
+        "disks_Contoso_WWW_VM01_disk1_07aafc34c78d4cf28d18bae712cdb1d4_externalid": {
+            "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Compute/disks/Contoso-WWW-VM01_disk1_07aafc34c78d4cf28d18bae712cdb1d4",
             "type": "String"
         },
-        "networkSecurityGroups_Contoso_WWW_VM01_nsg_name": {
-            "defaultValue": "Contoso-WWW-VM01-nsg",
+        "networkInterfaces_contoso_www_vm01720_externalid": {
+            "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Network/networkInterfaces/contoso-www-vm01720",
             "type": "String"
         }
     },
     "variables": {},
     "resources": [
         {
-            "type": "Microsoft.Network/networkSecurityGroups",
-            "apiVersion": "2020-08-01",
-            "name": "[parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name')]",
-            "location": "westeurope",
-            "tags": {
-                "Owner": "Mateusz",
-                "Created": "2021-03-17"
-            },
-            "properties": {
-                "securityRules": [
-                    {
-                        "name": "Port_80",
-                        "properties": {
-                            "protocol": "*",
-                            "sourcePortRange": "*",
-                            "destinationPortRange": "80",
-                            "sourceAddressPrefix": "*",
-                            "destinationAddressPrefix": "*",
-                            "access": "Allow",
-                            "priority": 1010,
-                            "direction": "Inbound",
-                            "sourcePortRanges": [],
-                            "destinationPortRanges": [],
-                            "sourceAddressPrefixes": [],
-                            "destinationAddressPrefixes": []
-                        }
-                    },
-                    {
-                        "name": "default-allow-ssh",
-                        "properties": {
-                            "protocol": "TCP",
-                            "sourcePortRange": "*",
-                            "destinationPortRange": "22",
-                            "sourceAddressPrefix": "*",
-                            "destinationAddressPrefix": "*",
-                            "access": "Allow",
-                            "priority": 1000,
-                            "direction": "Inbound",
-                            "sourcePortRanges": [],
-                            "destinationPortRanges": [],
-                            "sourceAddressPrefixes": [],
-                            "destinationAddressPrefixes": []
-                        }
-                    }
-                ]
-            }
-        },
-     
-        {
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2019-07-01",
             "name": "[parameters('virtualMachines_Contoso_WWW_VM01_name')]",
             "location": "westeurope",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_contoso_www_vm01703_name'))]"
-            ],
-            "tags": {
-                "Owner": "Mateusz",
-                "Created": "2021-03-17"
-            },
             "properties": {
                 "hardwareProfile": {
                     "vmSize": "Standard_D2s_v3"
@@ -91,12 +35,12 @@
                     },
                     "osDisk": {
                         "osType": "Linux",
-                        "name": "[concat(parameters('virtualMachines_Contoso_WWW_VM01_name'), '_disk1_6267d07250804f82b3c1b83525730a87')]",
+                        "name": "[concat(parameters('virtualMachines_Contoso_WWW_VM01_name'), '_disk1_07aafc34c78d4cf28d18bae712cdb1d4')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_Contoso_WWW_VM01_name'), '_disk1_6267d07250804f82b3c1b83525730a87'))]"
+                            "id": "[parameters('disks_Contoso_WWW_VM01_disk1_07aafc34c78d4cf28d18bae712cdb1d4_externalid')]"
                         },
                         "diskSizeGB": 30
                     },
@@ -104,7 +48,7 @@
                 },
                 "osProfile": {
                     "computerName": "[parameters('virtualMachines_Contoso_WWW_VM01_name')]",
-                    "adminUsername": "adminwwww",
+                    "adminUsername": "adminwww",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": false,
                         "provisionVMAgent": true
@@ -116,7 +60,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_contoso_www_vm01703_name'))]"
+                            "id": "[parameters('networkInterfaces_contoso_www_vm01720_externalid')]"
                         }
                     ]
                 },
@@ -124,116 +68,6 @@
                     "bootDiagnostics": {
                         "enabled": true
                     }
-                }
-            }
-        },
-        {
-            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
-            "apiVersion": "2020-08-01",
-            "name": "[concat(parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'), '/default-allow-ssh')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'))]"
-            ],
-            "properties": {
-                "protocol": "TCP",
-                "sourcePortRange": "*",
-                "destinationPortRange": "22",
-                "sourceAddressPrefix": "*",
-                "destinationAddressPrefix": "*",
-                "access": "Allow",
-                "priority": 1000,
-                "direction": "Inbound",
-                "sourcePortRanges": [],
-                "destinationPortRanges": [],
-                "sourceAddressPrefixes": [],
-                "destinationAddressPrefixes": []
-            }
-        },
-        {
-            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
-            "apiVersion": "2020-08-01",
-            "name": "[concat(parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'), '/Port_80')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'))]"
-            ],
-            "properties": {
-                "protocol": "*",
-                "sourcePortRange": "*",
-                "destinationPortRange": "80",
-                "sourceAddressPrefix": "*",
-                "destinationAddressPrefix": "*",
-                "access": "Allow",
-                "priority": 1010,
-                "direction": "Inbound",
-                "sourcePortRanges": [],
-                "destinationPortRanges": [],
-                "sourceAddressPrefixes": [],
-                "destinationAddressPrefixes": []
-            }
-        },
-        {
-            "type": "Microsoft.Network/virtualNetworks/subnets",
-            "apiVersion": "2020-08-01",
-            "name": "[concat(parameters('virtualNetworks_Contoso_VNET_name'), '/Conotoso-Sub-10.0.0.0')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_Contoso_VNET_name'))]"
-            ],
-            "properties": {
-                "addressPrefix": "10.0.0.0/24",
-                "delegations": [],
-                "privateEndpointNetworkPolicies": "Enabled",
-                "privateLinkServiceNetworkPolicies": "Enabled"
-            }
-        },
-        {
-            "type": "Microsoft.Network/virtualNetworks/subnets",
-            "apiVersion": "2020-08-01",
-            "name": "[concat(parameters('virtualNetworks_Contoso_VNET_name'), '/Contoso-Sub-10.0.1.0')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_Contoso_VNET_name'))]"
-            ],
-            "properties": {
-                "addressPrefix": "10.0.1.0/24",
-                "delegations": [],
-                "privateEndpointNetworkPolicies": "Enabled",
-                "privateLinkServiceNetworkPolicies": "Enabled"
-            }
-        },
-        {
-            "type": "Microsoft.Network/networkInterfaces",
-            "apiVersion": "2020-08-01",
-            "name": "[parameters('networkInterfaces_contoso_www_vm01703_name')]",
-            "location": "westeurope",
-            "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Contoso_VNET_name'), 'Conotoso-Sub-10.0.0.0')]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'))]"
-            ],
-            "tags": {
-                "Owner": "Mateusz",
-                "Created": "2021-03-17"
-            },
-            "properties": {
-                "ipConfigurations": [
-                    {
-                        "name": "ipconfig1",
-                        "properties": {
-                            "privateIPAddress": "10.0.0.4",
-                            "privateIPAllocationMethod": "Dynamic",
-                            "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Contoso_VNET_name'), 'Conotoso-Sub-10.0.0.0')]"
-                            },
-                            "primary": true,
-                            "privateIPAddressVersion": "IPv4"
-                        }
-                    }
-                ],
-                "dnsSettings": {
-                    "dnsServers": []
-                },
-                "enableAcceleratedNetworking": false,
-                "enableIPForwarding": false,
-                "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_name'))]"
                 }
             }
         }
