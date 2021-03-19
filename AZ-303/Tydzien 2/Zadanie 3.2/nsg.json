@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "networkSecurityGroups_Contoso_WWW_VM01_nsg_name": {
-      "defaultValue": "Contoso-VNET",
+      "defaultValue": "Contoso-WWW-VM01-nsg",
       "type": "String"
     }
   },
