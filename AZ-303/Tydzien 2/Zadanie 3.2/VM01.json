@@ -6,18 +6,87 @@
             "defaultValue": "Contoso-WWW-VM01",
             "type": "String"
         },
-        "disks_Contoso_WWW_VM01_disk1_07aafc34c78d4cf28d18bae712cdb1d4_externalid": {
-            "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Compute/disks/Contoso-WWW-VM01_disk1_07aafc34c78d4cf28d18bae712cdb1d4",
+          "disks_Contoso_WWW_VM01_disk1_c132b785f5d4446f87a0baebcf854ecb_name": {
+            "defaultValue": "Contoso-WWW-VM01_disk1_c132b785f5d4446f87a0baebcf854ecb",
             "type": "String"
+        
         },
         "networkInterfaces_contoso_www_vm01720_externalid": {
             "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Network/networkInterfaces/contoso-www-vm01720",
+            "type": "String"
+        },
+          "networkInterfaces_contoso_www_vm01522_name": {
+            "defaultValue": "contoso-www-vm01522",
+            "type": "String"
+        },
+        "virtualNetworks_Contoso_VNET_externalid": {
+            "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Network/virtualNetworks/Contoso-VNET",
+            "type": "String"
+        },
+        "networkSecurityGroups_Contoso_WWW_VM01_nsg_externalid": {
+            "defaultValue": "/subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.Network/networkSecurityGroups/Contoso-WWW-VM01-nsg",
             "type": "String"
         }
     },
     "variables": {},
     "resources": [
+            {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2020-08-01",
+            "name": "[parameters('networkInterfaces_contoso_www_vm01522_name')]",
+            "location": "westeurope",
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAddress": "10.0.0.4",
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[concat(parameters('virtualNetworks_Contoso_VNET_externalid'), '/subnets/Conotoso-Sub-10.0.0.0')]"
+                            },
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "dnsSettings": {
+                    "dnsServers": []
+                },
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[parameters('networkSecurityGroups_Contoso_WWW_VM01_nsg_externalid')]"
+                }
+            }
+        },
+           {
+            "type": "Microsoft.Compute/disks",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('disks_Contoso_WWW_VM01_disk1_c132b785f5d4446f87a0baebcf854ecb_name')]",
+            "location": "westeurope",
+            "sku": {
+                "name": "Premium_LRS",
+                "tier": "Premium"
+            },
+            "properties": {
+                "osType": "Linux",
+                "creationData": {
+                    "createOption": "FromImage",
+                    "imageReference": {
+                        "id": "/Subscriptions/44656a67-817a-4fe4-a66e-3a4502252f28/Providers/Microsoft.Compute/Locations/westeurope/Publishers/canonical/ArtifactTypes/VMImage/Offers/ubuntuserver/Skus/18.04-lts/Versions/18.04.202103151"
+                    }
+                },
+                "diskSizeGB": 30,
+                "diskIOPSReadWrite": 120,
+                "diskMBpsReadWrite": 25,
+                "encryption": {
+                    "type": "EncryptionAtRestWithPlatformKey"
+                }
+            }
+        },
         {
+            
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2019-07-01",
             "name": "[parameters('virtualMachines_Contoso_WWW_VM01_name')]",
