@@ -16,7 +16,7 @@
             "properties": {
                 "mode": "incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/nsg.json",
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.4/nsg.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
@@ -34,7 +34,7 @@
             "properties": {
                 "mode": "incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/vnet.json",
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.4/vnet.json",
                     "contentVersion": "1.0.0.0"
                 },
                  "parameters": {
@@ -53,7 +53,7 @@
             "properties": {
                 "mode": "incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/VM.json",
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.4/VM.json",
                     "contentVersion": "1.0.0.0"
                 },
                  "parameters": {
@@ -70,7 +70,7 @@
             "properties": {
                 "mode": "incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/publicip.json",
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.4/publicip.json",
                     "contentVersion": "1.0.0.0"
                 },
                  "parameters": {
