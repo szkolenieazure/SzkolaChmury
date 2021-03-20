@@ -91,8 +91,8 @@
     
         ],
         "tags": {
-           "Owner": "Mateusz"
-            "Created": "2021-03-20",
+           "Owner": "Mateusz",
+            "Created": "2021-03-20"
         },
         "properties": {
             "ipConfigurations": [
@@ -120,8 +120,8 @@
             "[resourceId('Microsoft.Network/networkInterfaces', 'Contoso-WWW-VM02-NIC')]"
         ],
         "tags": {
-             "Owner": "Mateusz"
-            "Created": "2021-03-20",
+             "Owner": "Mateusz",
+            "Created": "2021-03-20"
         },
         "properties": {
             "hardwareProfile": {
