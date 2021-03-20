@@ -14,8 +14,8 @@
         "location": "[resourceGroup().location]",
         "dependsOn": [],
         "tags": {
-           "Owner": "Mateusz"
-           "Created": "2021-03-20",
+           "Owner": "Mateusz",
+           "Created": "2021-03-20"
         },
         "properties": {
             "addressSpace": {
