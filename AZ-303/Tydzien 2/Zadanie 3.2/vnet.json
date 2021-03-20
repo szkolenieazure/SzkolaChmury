@@ -1,7 +1,18 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "Contoso-WWW-VM01-nsg": {
+      "defaultValue": "[resourceId('Microsoft.Network/networkSecurityGroups', 'Contoso-WWW-VM01-nsg')]",
+      "type": "String"
+    },
+    "Contoso-WWW-VM02-nsg": {
+      "defaultValue": "[resourceId('Microsoft.Network/networkSecurityGroups', 'Contoso-WWW-VM02-nsg')]",
+      "type": "String"
+    }
+        
+
+    },
     "functions": [],
     "variables": {},
     "resources": [
