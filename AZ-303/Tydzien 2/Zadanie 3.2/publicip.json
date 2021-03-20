@@ -14,7 +14,8 @@
                 "name": "Standard",
                 "tier": "Regional"},
         "tags": {
-            "displayName": "PublicIPAddress"
+            "Owner": "Mateusz",
+            "Created": "2021-03-20",
         },
         "properties": {
             "publicIPAllocationMethod": "Static"
@@ -31,7 +32,8 @@
                 "name": "Standard",
                 "tier": "Regional"},
         "tags": {
-            "displayName": "PublicIPAddress"
+            "Owner": "Mateusz",
+            "Created": "2021-03-20",
         },
         "properties": {
             "publicIPAllocationMethod": "Static"
