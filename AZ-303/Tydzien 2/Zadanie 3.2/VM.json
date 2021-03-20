@@ -76,6 +76,75 @@
             }
             
         }
+    },
+     {
+        "name": "Contoso-WWW-VM02-NIC",
+        "type": "Microsoft.Network/networkInterfaces",
+        "apiVersion": "2019-11-01",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+    
+        ],
+        "tags": {
+            "displayName": "Contoso-WWW-VM02"
+        },
+        "properties": {
+            "ipConfigurations": [
+                {
+                    "name": "ipConfig1",
+                    "properties": {
+                        "privateIPAllocationMethod": "Dynamic",
+                        
+                        "subnet": {
+                            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'Contoso-WWW-VNET', 'Conotoso-Sub-10.0.1.0')]"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "name": "Contoso-WWW-VM02",
+        "type": "Microsoft.Compute/virtualMachines",
+        "apiVersion": "2019-07-01",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+            "[resourceId('Microsoft.Network/networkInterfaces', 'Contoso-WWW-VM02-NIC')]"
+        ],
+        "tags": {
+            "displayName": "Contoso-WWW-VM02"
+        },
+        "properties": {
+            "hardwareProfile": {
+                "vmSize": "Standard_D2s_v3"
+            },
+            "osProfile": {
+                "computerName": "Contoso-WWW-VM02",
+                "adminUsername": "wwwadmin",
+                "adminPassword": "Start12345678"
+            },
+            "storageProfile": {
+                "imageReference": {
+                    "publisher": "Canonical",
+                    "offer": "UbuntuServer",
+                    "sku": "18.04-LTS",
+                    "version": "latest"
+                },
+                "osDisk": {
+                    "name": "Contoso-WWW-VM02-OSDisk",
+                    "caching": "ReadWrite",
+                    "createOption": "FromImage"
+                }
+            },
+            "networkProfile": {
+                "networkInterfaces": [
+                    {
+                        "id": "[resourceId('Microsoft.Network/networkInterfaces', 'Contoso-WWW-VM02-NIC')]"
+                    }
+                ]
+            }
+            
+        }
     }
     ],
     "outputs": {}
