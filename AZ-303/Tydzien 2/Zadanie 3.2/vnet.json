@@ -12,10 +12,7 @@
         "type": "Microsoft.Network/virtualNetworks",
         "apiVersion": "2019-11-01",
         "location": "[resourceGroup().location]",
-        "dependsOn": [
-            "[resourceId('Microsoft.Network/networkSecurityGroups', 'Contoso-WWW-VM01-nsg')]",
-            "[resourceId('Microsoft.Network/networkSecurityGroups', 'Contoso-WWW-VM02-nsg')]"
-        ],
+        "dependsOn": [],
         "tags": {
             "displayName": "Contoso-WWW-VNET"
         },
