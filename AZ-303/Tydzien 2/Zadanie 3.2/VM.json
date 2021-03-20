@@ -98,7 +98,7 @@
                     "properties": {
                         "privateIPAllocationMethod": "Dynamic",
                         "publicIPAddress": {
-                            "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'Contoso-WWW-VM01-PublicIP')]"
+                            "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'Contoso-WWW-VM02-PublicIP')]"
                         },
                         "subnet": {
                             "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'Contoso-WWW-VNET', 'Conotoso-Sub-10.0.1.0')]"
