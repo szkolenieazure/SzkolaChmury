@@ -1,0 +1,84 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        
+    },
+    "variables": {},
+    "resources": [
+        
+        {
+                
+            
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "Contoso-WWW-nsg",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/nsg.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    }
+        
+            
+        
+            }},    
+
+            {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "Contoso-VNET",
+            "dependsOn": ["[resourceId('Microsoft.Resources/deployments', 'Contoso-WWW-nsg')]"],
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/vnet.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                 "parameters": {
+        
+            }
+        }},
+          {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "Contoso-WWW-VM",
+            "dependsOn": ["[resourceId('Microsoft.Resources/deployments', 'Contoso-WWW-VM-PublicIP')]",
+                         "[resourceId('Microsoft.Resources/deployments', 'Contoso-VNET')]",
+                         "[resourceId('Microsoft.Resources/deployments', 'Contoso-WWW-nsg')]"
+                         
+                         ],
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/VM.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                 "parameters": {
+        
+            }
+        }},
+          {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2020-06-01",
+            "name": "Contoso-WWW-VM-PublicIP",
+            "dependsOn": [
+                         "[resourceId('Microsoft.Resources/deployments', 'Contoso-VNET')]"      
+                         ],
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.2/publicip.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                 "parameters": {
+        
+            }
+        }}
+     
+     ],
+      "outputs": {}
+     
+    }
