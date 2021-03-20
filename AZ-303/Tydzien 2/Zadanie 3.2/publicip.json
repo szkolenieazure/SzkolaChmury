@@ -14,7 +14,7 @@
             "displayName": "PublicIPAddress"
         },
         "properties": {
-            "publicIPAllocationMethod": "Dynamic"
+            "publicIPAllocationMethod": "Static"
             
         }
     },
@@ -27,7 +27,7 @@
             "displayName": "PublicIPAddress"
         },
         "properties": {
-            "publicIPAllocationMethod": "Dynamic"
+            "publicIPAllocationMethod": "Static"
             
         }
     
