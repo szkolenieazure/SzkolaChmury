@@ -17,7 +17,8 @@
     
         ],
         "tags": {
-            "displayName": "Contoso-WWW-VM01"
+            "Owner": "Mateusz",
+            "Created": "2021-03-20"
         },
         "properties": {
             "ipConfigurations": [
@@ -46,7 +47,8 @@
             "[resourceId('Microsoft.Network/networkInterfaces', 'Contoso-WWW-VM01-NIC')]"
         ],
         "tags": {
-            "displayName": "Contoso-WWW-VM01"
+            "Owner": "Mateusz",
+            "Created": "2021-03-20"
         },
         "properties": {
             "hardwareProfile": {
@@ -89,7 +91,8 @@
     
         ],
         "tags": {
-            "displayName": "Contoso-WWW-VM02"
+           "Owner": "Mateusz"
+            "Created": "2021-03-20",
         },
         "properties": {
             "ipConfigurations": [
@@ -117,7 +120,8 @@
             "[resourceId('Microsoft.Network/networkInterfaces', 'Contoso-WWW-VM02-NIC')]"
         ],
         "tags": {
-            "displayName": "Contoso-WWW-VM02"
+             "Owner": "Mateusz"
+            "Created": "2021-03-20",
         },
         "properties": {
             "hardwareProfile": {
