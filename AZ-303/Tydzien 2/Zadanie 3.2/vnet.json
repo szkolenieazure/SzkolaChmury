@@ -3,11 +3,11 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "Contoso-WWW-VM01-nsg": {
-      "defaultValue": "[resourceId('Microsoft.Network/networkSecurityGroups', 'Contoso-WWW-VM01-nsg')]",
+      "defaultValue": "Microsoft.Network/networkSecurityGroups/Contoso-WWW-VM01-nsg",
       "type": "String"
     },
     "Contoso-WWW-VM02-nsg": {
-      "defaultValue": "[resourceId('Microsoft.Network/networkSecurityGroups', 'Contoso-WWW-VM02-nsg')]",
+      "defaultValue": "Microsoft.Network/networkSecurityGroups/Contoso-WWW-VM01-nsg')]",
       "type": "String"
     }
         
