@@ -15,7 +15,7 @@
                 "tier": "Regional"},
         "tags": {
             "Owner": "Mateusz",
-            "Created": "2021-03-20",
+            "Created": "2021-03-20"
         },
         "properties": {
             "publicIPAllocationMethod": "Static"
@@ -33,7 +33,7 @@
                 "tier": "Regional"},
         "tags": {
             "Owner": "Mateusz",
-            "Created": "2021-03-20",
+            "Created": "2021-03-20"
         },
         "properties": {
             "publicIPAllocationMethod": "Static"
