@@ -14,7 +14,7 @@
           "keyVault": {
             "id": " /subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.KeyVault/vaults/contosopassword-keyvault"
           },
-          "secretName": "adminPassword"}
+          "secretName": "adminwwwpass"}
         }
     },
     "resources": [
