@@ -1,9 +1,22 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        
+        
+      
+
+    },
     "functions": [],
-    "variables": {},
+    "variables": {
+        "password": {
+        "reference": {
+          "keyVault": {
+            "id": " /subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.KeyVault/vaults/contosopassword-keyvault"
+          },
+          "secretName": "adminPassword"}
+        }
+    },
     "resources": [
 
    
@@ -57,7 +70,7 @@
             "osProfile": {
                 "computerName": "Contoso-WWW-VM01",
                 "adminUsername": "wwwadmin",
-                "adminPassword": "Start12345678"
+                "adminPassword": "[variables('Password')]"
             },
             "storageProfile": {
                 "imageReference": {
@@ -130,7 +143,7 @@
             "osProfile": {
                 "computerName": "Contoso-WWW-VM02",
                 "adminUsername": "wwwadmin",
-                "adminPassword": "Start12345678"
+                "adminPassword": "secretke"
             },
             "storageProfile": {
                 "imageReference": {
