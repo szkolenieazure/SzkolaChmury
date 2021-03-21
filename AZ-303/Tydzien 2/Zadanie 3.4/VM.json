@@ -6,7 +6,7 @@
             "type": "securestring"
         },
         "adminLogin": {
-            "type": "securestring"
+            "type": "string"
             }
 
     },
@@ -33,7 +33,7 @@
                 {
                     "name": "ipConfig1",
                     "properties": {
-                        "privateIPAllocationMethod": "Static",
+                        "privateIPAllocationMethod": "Dynamic",
                         "publicIPAddress": {
                             "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'Contoso-WWW-VM01-PublicIP')]"
                         },
