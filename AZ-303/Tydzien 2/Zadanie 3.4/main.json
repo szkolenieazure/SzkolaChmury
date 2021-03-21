@@ -56,7 +56,8 @@
                     "uri": "https://raw.githubusercontent.com/szkolenieazure/SzkolaChmury/main/AZ-303/Tydzien%202/Zadanie%203.4/VM.json",
                     "contentVersion": "1.0.0.0"
                 },
-                 "parameters": {
+                  "parametersLink": {
+                    "uri": "https://github.com/szkolenieazure/SzkolaChmury/blob/main/AZ-303/Tydzien%202/Zadanie%203.4/vm.parameters.json"
         
             }
         }},
