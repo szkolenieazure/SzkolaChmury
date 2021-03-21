@@ -6,7 +6,7 @@
             "type": "securestring"
         },
         "adminLogin": {
-            "type": "string"
+            "type": "securestring"
             }
 
     },
