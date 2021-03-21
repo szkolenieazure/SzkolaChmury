@@ -2,26 +2,21 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        
-        
-      
+        "adminpassword":{
+            "type": "securestring"
+        },
+        "adminLogin": {
+            "type": "string"
+            }
 
     },
     "functions": [],
-    "variables": {
-        "password": {
-        "reference": {
-          "keyVault": {
-            "id": " /subscriptions/31db1cf0-ddaf-40ef-9599-0f9dd0abd54c/resourceGroups/Contoso-RG/providers/Microsoft.KeyVault/vaults/contosopassword-keyvault"
-          },
-          "secretName": "adminwwwpass"}
-        }
-    },
+    "variables": {},
     "resources": [
 
    
 
-    {
+      {
         "name": "Contoso-WWW-VM01-NIC",
         "type": "Microsoft.Network/networkInterfaces",
         "apiVersion": "2019-11-01",
@@ -38,7 +33,7 @@
                 {
                     "name": "ipConfig1",
                     "properties": {
-                        "privateIPAllocationMethod": "Dynamic",
+                        "privateIPAllocationMethod": "Static",
                         "publicIPAddress": {
                             "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'Contoso-WWW-VM01-PublicIP')]"
                         },
@@ -69,8 +64,8 @@
             },
             "osProfile": {
                 "computerName": "Contoso-WWW-VM01",
-                "adminUsername": "wwwadmin",
-                "adminPassword": "[variables('Password')]"
+                "adminUsername": "[parameters('adminLogin')]",
+                "adminPassword": "[parameters('adminpassword')]"
             },
             "storageProfile": {
                 "imageReference": {
@@ -142,8 +137,8 @@
             },
             "osProfile": {
                 "computerName": "Contoso-WWW-VM02",
-                "adminUsername": "wwwadmin",
-                "adminPassword": "secretke"
+                "adminUsername": "[parameters('adminLogin')]",
+                "adminPassword": "[parameters('adminpassword')]"
             },
             "storageProfile": {
                 "imageReference": {
