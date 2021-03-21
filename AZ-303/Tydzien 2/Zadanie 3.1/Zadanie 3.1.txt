@@ -4,9 +4,9 @@ Virtual machine 		          	Contoso-WWW-VM01
 
 Network interface         			Contoso-WWW-VM01-NIC
 
-Network security group	      	Contoso-WWW-VM01-NSG
+Network security group	      	    Contoso-WWW-VM01-NSG
 
-Disk			                    	Contoso-WWW-VM01-OSDisk
+Disk			                    Contoso-WWW-VM01-OSDisk
 
 Public IP address	           		Contoso-WWW-VM01-PublicIP
 
