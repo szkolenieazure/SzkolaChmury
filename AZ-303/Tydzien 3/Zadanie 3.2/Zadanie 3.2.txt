@@ -5,6 +5,6 @@ Pozycja Virtual Machine w Insights pokazuje nam Wydajność, network map oraz ko
 aby to zadziałało prawidłowo musimy jeszcze zaktualizować  Azure Monitor for VMs.
 Dzięki nmap mamy mozliwość sprawdzenia z jakimi ip i na jakim porcie nasza maszyna wirtualna nawiązuje połączenie z daną usługą.
 
-Log ana;litic umożliwia na wygenerowanie raportów bezpieczeństwa które są gotowe: Missing security or critical updates, Members added to security groups, Uses of clear text password, Windows failed logins. Oczywiście mamy możliwośc stworzenia własnych zapytań według naszego uznania. 
+Log analitic umożliwia na wygenerowanie raportów bezpieczeństwa które są gotowe: Missing security or critical updates, Members added to security groups, Uses of clear text password, Windows failed logins. Oczywiście mamy możliwośc stworzenia własnych zapytań według naszego uznania. 
 
 
