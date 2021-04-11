@@ -1,0 +1,11 @@
+
+W mojej subskrypcji Security Center pokazał brak endpoint protection, z security center można wywołac instalację endpoint protection, oczywiście dotyczy to tylko VM na,
+których zainstalowany jest Windows.
+
+W security center możemy włączyć sobie różne rekomendacje dostyczące standardów zabezpieczeń Azure Security Benchmark, ISO 27001, PCI DSS 3.2.1, SOC TSP.
+W zadaniu była mowa aby przeanalizować rekomendacje PCI DSS 3.2.1,
+Po przeanalizowaniu wymagaganych rekomendacji, udało się jej wdrożyć,
+brakowało zaszyfrowanych dysków zainstalowanego endpoint protection włączonego MFA dla innych kont(Czekam aż MFA się odświeży w PCI DSS).
+
+Według mnie security center jest dobrym narzedziem które umożliwia podniesienie poziomu bezpieczeństwa naszych zasobów w azure. mojej analizy winika, że warto sprawdazić
+więcej niż jedną rekomendację ponieważ różne rekomendacje zwracją uwagę na różne rzeczy. 
