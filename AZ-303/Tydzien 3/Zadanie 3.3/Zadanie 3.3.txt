@@ -1,0 +1,29 @@
+Po włączeniu just-in-time na maszynie w nsg została dodana reguła, która blokuje wszystkie połączenia po RDP
+
+Priority Name                                                               Port Protocol Source Destination Action
+1000     SecurityCenter-JITRule_1160241312_3CCAEF7D151E429EA19996C89358B8AB 3389  Any       Any   10.0.0.4    Deny
+
+Po włączeniu tymczasowego dostępu do maszyny do nsg zostaje dodana następująca reguła która umożliwia tymczasowe połaczenie z maszyną z wybrange ip lub zakresu ip. 
+
+Priority Name                                                                 Port Protocol Source           Destination  Action
+  100     SecurityCenter-JITRule-1160241312-88D4EAF72F614EEAA9A84E4A8FB4CE2E  3389    Any     5.184.36.246     10.0.0.4   Allow
+
+Aby uzyskać tymczasowy dostęp do maszyny przez RDP/SSH muszę 
+należy  zaznaczyć wybraną maszynę i kliknąć Request access
+Tymczasowy dostęp można  przydzielić na 1 do 3 godzin, jeżeli mamy aktywne połączenie to nawet po upływie 3 godzin połączenie będzie nadal działało dopóki dana sesja 
+nie zostanie rozłączona. 
+
+
+
+Azure Bastion
+
+Zalety:
+
+
+
+
+
+
+Wady:
+- brak możliwości kopiowania plików jak przy normalnym połączeniu RDP
+- przy bardzo dużej ilości maszyn koszty ponieważ tylko 5 GB na miesiąć jest za darmo
