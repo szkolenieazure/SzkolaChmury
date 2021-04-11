@@ -8,7 +8,7 @@ Po włączeniu tymczasowego dostępu do maszyny do nsg zostaje dodana następuj�
 Priority Name                                                                 Port Protocol Source           Destination  Action
   100     SecurityCenter-JITRule-1160241312-88D4EAF72F614EEAA9A84E4A8FB4CE2E  3389    Any     5.184.36.246     10.0.0.4   Allow
 
-Aby uzyskać tymczasowy dostęp do maszyny przez RDP/SSH muszę 
+Aby uzyskać tymczasowy dostęp do maszyny przez RDP/SSH 
 należy  zaznaczyć wybraną maszynę i kliknąć Request access
 Tymczasowy dostęp można  przydzielić na 1 do 3 godzin, jeżeli mamy aktywne połączenie to nawet po upływie 3 godzin połączenie będzie nadal działało dopóki dana sesja 
 nie zostanie rozłączona. 
@@ -18,12 +18,17 @@ nie zostanie rozłączona.
 Azure Bastion
 
 Zalety:
-
-
-
-
+- bezpieczne połaczenie z VM przez portal azure przy wykorzystaniu SSL, dzięki dostępowi przez przeglądarke możliwy jest dostęp do maszyn z każdego urządzenia, bez
+doinstalowywania klienta RDP
+- połączenia z  maszynami odbywają się  w sieci prywatnej
+- porty rdp oraz ssh nie są wystawione poblicznie na świat dzięi temu nie narażamy się na skanowanie portów
+- w szybki sposoób mamy dostęp do aktualnych sesji na maszynach wirtualnych
 
 
 Wady:
 - brak możliwości kopiowania plików jak przy normalnym połączeniu RDP
 - przy bardzo dużej ilości maszyn koszty ponieważ tylko 5 GB na miesiąć jest za darmo
+
+
+Jeżeli mamy włączony just in time to podczas dodawania tymczasowego dostępu należy dodać wewnętrzną sieć azure bastion.
+Według mnie wystarczy mieć tylko jedną usługę włączoną albo just in time albo azure bastion.
