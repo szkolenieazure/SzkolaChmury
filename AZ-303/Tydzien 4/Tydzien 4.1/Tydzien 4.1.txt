@@ -1,0 +1,20 @@
+Blobs:
++ przetrzymywanie kopii zapasowych serwisu
++ przetrzymywanie zdjęć dotyczących zamówień
+-  pliki modyfikowane przez wiele osób
+
+Files:
++ zastąpienie lokalnego udziału plików na chmurowy
++ równoczesny dostęp do plików dla pracowników firmy oraz jej partnerów. 
+- przechowywanie dysków dla VMs
+
+Queues:
++ wykorzystanie kolejek przy wzmożonych zamówieniach,
++ systemy które wymagają asynchronicznego przepływu danych,
+- systemy które wymagają synchronicznego przepływu danych
+
+Tables:
++ przechowywanie danych strukturalnych, które mogę być wykorzystywane przez aplikację internetową
++ tabele są automatycznie skalowane wraz ze wzrostem zapotrzebowania na miejsce na dane
+- dane które wymagają relacyjności 
+
