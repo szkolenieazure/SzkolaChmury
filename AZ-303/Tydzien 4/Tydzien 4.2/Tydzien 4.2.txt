@@ -1,2 +1,2 @@
 + Archiwum, podstawowe miejsce na kopie zapasowe, serwer plików
-- aplikacja wymagające szybkiego dostepu do plików, 
+- aplikacje wymagające szybkiego dostepu do plików, 
