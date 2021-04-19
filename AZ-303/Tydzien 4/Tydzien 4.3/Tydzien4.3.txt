@@ -1,0 +1,32 @@
+Założenia:
+Retencja: dane starsze niż 3 lata są kasowane.
+1 dzień backupu = 1 TB
+30 dni backupu (miesiąc) = 30 TB
+1 rok = 365 TB 
+2 lata = 730 TB
+3 lata = 1 095 TB
+4 lata = 1 095 TB ( ponieważ 1 rok zostaje usunięty)
+5 lat = 1 095 TB ( ponieważ 2 rok zostaje usunięty)
+6 lat 1 095 TB ( ponieważ 3 rok zostaje usunięty)
+
+Konto magazynu wykorzystane do backupu
+
+Region: North Europe
+Typ: Magazyn blokowych obiektów blob
+Warstwa wydajności: Standard
+Typ konta magazynu: Ogólnego przeznaczenia, wersja 2
+Nadmiarowość: RA-GRS
+Warstwa dostępu: Archiwum
+
+Koszt 1 TB = 2,86 USD
+
+Koszt miesięczny przechowywania 365 TB danych to 1 043,9 USD
+1 rok przechowywania danych to 12x 1043,9 USD to 12 526,8 USD
+2 rok przechowywania danych to 12 526,8 x 2 = 25 053,6 USD
+3 rok przechowywania danych 12 526,8 x 3 = 75 160,8 USD
+4 rok 1 rok zostaje usunięty koszt = 75 160,8 USD
+5 rok 2 zostaje usunięty koszt = 75 160,8 USD
+6 rok 75 160,8 USD
+
+Koszt całkowity przez 6 lat to   338 223,6 USD
+
