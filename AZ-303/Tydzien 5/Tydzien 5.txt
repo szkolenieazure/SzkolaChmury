@@ -1,0 +1,12 @@
+1. Utworzenie konta keyvault.
+2. Stworzenie maszyny z Windows 10.
+3. Zaszyfrowanie maszyny klucz zapisany w keyvault.
+4. Zatrzymanie maszyny z Windows 10
+5. Wygenerowanie SAS do pobrania dysku z systemem Windows 10
+6. Stworzenie maszyny z Windows Server 2019.
+7. Zainstlowanie roli Hyper-V
+8. Pobranie obrazu dysku.
+9.  Po pobranniu zmiana nazwy abcd na np abcd.vhd
+10. Utworzenie maszyny i podpięcie pobranego dysku.
+11. Maszyna nie chce się uchomić ponieważ brakuje usb bitlocker key
+ 
