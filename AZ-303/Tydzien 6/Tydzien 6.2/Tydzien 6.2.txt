@@ -1,4 +1,4 @@
-Najlepiej jest zarejestrować aplikację w App registrations w Azure Active Directory
+Aplikacja Polecenia została zarejestrowna  w App registrations w Azure Active Directory
 
-Po rejestracji aplikacji a AAD mamy 2 metody autentyfikacji Certificates i Client secrets.
+Do autentyfikacji zostało wybrane Client secrets.
 
