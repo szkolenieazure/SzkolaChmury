@@ -1,0 +1,5 @@
+W tym przypadku można wykrozystać 2 narzędzia
+-powershell Get-AzADUser | select DisplayName
+
+-portal https://developer.microsoft.com/en-us/graph/graph-explorer
+i w nim wybierająć funkcję get  https://graph.microsoft.com/v1.0/users
