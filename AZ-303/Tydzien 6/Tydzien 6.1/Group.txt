@@ -1,0 +1,5 @@
+Nie mogłem utworzyć dynamiczej grupy ponieważ nie mam już możliwości wybrania trailowego P2.
+a  minimum p1 jest wymagane do tworzenia grup dynamicznych.
+
+Podczas tworzenia grupy wybieramy w membership type dynamic user
+a następnie wybieramy add dynamic query i tam wybiermy warunek który musi być spełniony aby osoby należały do grupy. 
