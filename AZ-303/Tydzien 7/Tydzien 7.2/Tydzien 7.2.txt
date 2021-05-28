@@ -1,0 +1,2 @@
+Uwierzytelnianie zostało skonfigurowane w aplikacji Microsoft Authenticator.
+Po dodaniu zaufanych sieci nie trzeba już potwierdzać logowania w aplikacji.
