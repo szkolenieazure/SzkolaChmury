@@ -1,0 +1,3 @@
+
+Password Writeback wymaga planu P1.
+Aby zadziałało SSO na lokalnych komputerach należy zrobić politykę GPO. 
