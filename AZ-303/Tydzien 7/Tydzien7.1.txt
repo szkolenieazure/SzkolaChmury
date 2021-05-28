@@ -1,3 +1,0 @@
-Nie mam jeszcze swojej domeny, dlatego do synchronizacji muszę wykorzystać domenę microsoftu.
-Password Writeback wymaga planu P1.
-Aby zadziałało SSO na lokalnych komputerach należy zrobić politykę GPO. 
