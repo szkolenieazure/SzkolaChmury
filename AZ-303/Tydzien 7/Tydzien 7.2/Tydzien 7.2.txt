@@ -1,2 +1,4 @@
 Uwierzytelnianie zostało skonfigurowane w aplikacji Microsoft Authenticator.
 Po dodaniu zaufanych podsieci nie trzeba już potwierdzać logowania w aplikacji.
+Dynamiczna grupa została stworzona jednak nie miała ona wyływu na użytkowników,
+dynamiczne grupy można wykorzystać do Conditional Access , jednak skrzystanie z tego wymaga wyłączenia domyślnych zabezpieczeń azure ad.
