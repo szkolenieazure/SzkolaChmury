@@ -1,3 +1,49 @@
+Przygotowanie środowiska
+
+Zbudowanie prostej struktury sieci Hub & Spoke
+
+    Zastanów się jaką adresację wybrać dla swojej sieci Hub oraz dla sieci Spoke. Pamiętaj, że musi to być zakres prywatny i oba zakresy nie mogą się pokrywać.
+
+    Zbuduj w Azure dwa VNet’y – jeden, który będzie pełnił role sieci typu Hub, drugi, który będzie pełnił role sieci Spoke. Możesz użyć do tego: Reference Architectures
+        Podziel VNet’y odpowiednio na Subnet’y, tak by:
+        W subnecie Hub przewidzieć miejsce na usługi:
+            VPN Gateway
+            Firewall
+            Usługi wspólne (np. Active Directory)
+            Stacje przesiadkowe do zarządzania środowiskiem
+            W subnecie Spoke przewidzieć miejsce na usługi:
+            Serwer aplikacyjny
+            Serwer baz danych
+            Połącz sieci Hub and Spoke za pomocą peeringu i upewnij się, że ruch będzie mógł płynąć pomiędzy siecią Spoke a siecią Hub i odwrotnie.
+
+Koncepcja prezentowana w Lab’ie może być pewną propozycją dla Ciebie, liczę też tutaj na Twoją propozycję w zakresie sieci i adresacji.
+
+Instalacja serwera aplikacyjnego i bazy danych
+
+    W wybranych sieciach postaw swój ulubiony serwer pod serwer aplikacyjny oraz bazę danych. W demo korzystałem z Ubuntu 16.04 jako OS, serwera Apache oraz MySQL. Wybierz takie usługi i systemy jak lubisz.
+        W ramach środowiska demo instalacja baz danych była realizowana za pomocą komend:
+
+# Install MySQL Client Linux
+sudo apt-get install mysql-client
+# Install MySQL Server
+sudo apt-get install mysql-server
+# Check if the MySQL Server is up & running
+sudo netstat -tap | grep mysql
+# Check the mysql service and restart it
+systemctl status mysql.service
+systemctl restart mysql.service
+
+    W ramach środowiska demo instalacja serwera aplikacyjnego była realizowana za pomocą komend:
+
+# Install Apache Server on Linux and Lynx browser
+sudo apt get install apache2 lynx
+
+Instalacja serwera przesiadkowego, do zarządzania środowiskiem
+
+    W wybranej podsieci Hub postaw swój ulubiony serwer pod serwer przesiadkowy. W demo korzystałem z Ubuntu 16.04 jako OS, może wybrać dowolny.
+
+Zadania
+
 1. Test peeringu oraz domyślnego routingu
 
 Wykorzystując wszystkie serwery, które zostały wdrożone w środowisku, pokaż, że peering działa poprawnie. Udowodnij, że routing w ramach sieci Spoke pomiędzy subnetami też działa poprawnie.
