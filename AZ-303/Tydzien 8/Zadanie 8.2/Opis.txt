@@ -1,1 +1,1 @@
-
+Dla ograniczenia dostępu przez RDP do maszyny zarządzającej została włączona funkcja just-in-time. 
