@@ -1,1 +1,4 @@
-
+Dzięki zastosowaniu Traffic Analytics. możemy:
+- zwizualizować aktywność sieci w azure oraz w punktach
+- poznać wzorce przepływu w różnych regionach Azure
+- poznać zagrożenia bezpieczeństwa oraz zabezpieczyć sieć przed zagrożeniami. 
