@@ -1,0 +1,1 @@
+Sieci zostały podzielone w sposób aby jak najmniej zmarnować adresacji.(Pamiętając o tym że azure zabiera 5 adresów dla każdej podsieci. 
